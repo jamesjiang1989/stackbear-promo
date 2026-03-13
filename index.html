@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stackbear | Exclusive 50% OFF Offer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* 隐藏遮罩层的默认状态 */
-        .hidden-modal { display: none; }
-    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
@@ -55,7 +51,7 @@
             <p class="text-xs text-gray-400 mt-3">Valid on Amazon.com only</p>
         </section>
 
-        <div id="transitionModal" class="hidden-modal absolute inset-0 bg-black/90 z-50 flex flex-col items-center justify-center p-6 text-white text-center">
+        <div id="transitionModal" class="hidden absolute inset-0 bg-black/95 z-50 flex-col items-center justify-center p-6 text-white text-center">
             <div class="bg-green-500 rounded-full p-3 mb-4">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
             </div>
@@ -79,28 +75,48 @@
 
     <script>
         document.getElementById('claimBtn').addEventListener('click', function() {
-            // 1. 复制折扣码到剪贴板
             const codeToCopy = "Bear50off";
-            navigator.clipboard.writeText(codeToCopy).then(() => {
-                
-                // 2. 显示过渡遮罩层
+            
+            // 执行复制动作及后续跳转流程的函数
+            const executeTransition = () => {
                 const modal = document.getElementById('transitionModal');
-                modal.classList.remove('hidden-modal');
+                
+                // 移除隐藏属性，并加上 flex 属性让内部元素居中对齐
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
 
-                // 3. 延迟 3.5 秒后跳转 (让用户有时间看清楚要搜索什么)
+                // 延迟 3.5 秒后执行跳转
                 setTimeout(() => {
-                    // 跳转链接：尝试唤醒亚马逊 App 的搜索功能
-                    // 如果手机装了 Amazon App，这个链接极大概率会直接跳进 App 搜索页
                     const searchKeyword = "stackbear+carbon+steel+pan";
                     const amazonUrl = `https://www.amazon.com/s?k=${searchKeyword}`;
-                    
                     window.location.href = amazonUrl;
                 }, 3500);
+            };
 
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-                alert('Please manually copy code: Bear50off');
-            });
+            // 尝试复制到剪贴板 (增加错误兼容，部分 App 内置浏览器可能拦截剪贴板权限)
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(codeToCopy).then(() => {
+                    executeTransition();
+                }).catch(err => {
+                    console.log('Clipboard copy failed, continuing flow...', err);
+                    executeTransition(); // 即使复制失败，也继续往下走流程
+                });
+            } else {
+                // 兼容老旧或不支持剪贴板 API 的浏览器
+                const textArea = document.createElement("textarea");
+                textArea.value = codeToCopy;
+                textArea.style.position = "fixed"; 
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.log('Fallback copy failed', err);
+                }
+                document.body.removeChild(textArea);
+                executeTransition();
+            }
         });
     </script>
 </body>
