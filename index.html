@@ -3,83 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stackbear | Exclusive 50% OFF Offer</title>
+    <title>Stackbear | VIP Exclusive Offer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 自定义闪烁动画，增加按钮点击欲望 */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(245, 158, 11, 0.8); }
+        }
+        .btn-glow { animation: pulse-glow 2s infinite; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-zinc-100 text-zinc-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <main class="max-w-md mx-auto bg-white shadow-xl relative overflow-hidden flex-grow w-full">
+    <main class="max-w-md mx-auto bg-zinc-900 text-zinc-100 shadow-2xl relative overflow-hidden flex-grow w-full border-x border-zinc-800">
         
-        <header class="bg-black text-white text-center py-4">
-            <h1 class="text-2xl font-bold tracking-widest uppercase">stackbear</h1>
+        <header class="py-5 text-center border-b border-zinc-800">
+            <h1 class="text-3xl font-serif font-black tracking-[0.2em] text-white">STACKBEAR</h1>
+            <p class="text-[10px] tracking-widest text-amber-500 uppercase mt-1">Professional Culinary Gear</p>
         </header>
 
-        <section class="p-6 text-center">
-            <div class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse">
-                LIMITED TIME OFFER
-            </div>
-            <h2 class="text-3xl font-extrabold mb-2 text-gray-900">Get 50% OFF</h2>
-            <p class="text-lg text-gray-500 mb-6">The Ultimate Carbon Steel Frying Pan</p>
-
-            <div class="bg-gray-200 rounded-lg h-64 w-full mb-6 flex items-center justify-center overflow-hidden border border-gray-100 shadow-inner">
-                <img src="https://via.placeholder.com/400x300?text=Stackbear+Carbon+Steel+Pan" alt="Stackbear Carbon Steel Pan" class="object-cover w-full h-full">
-            </div>
-
-            <div class="flex justify-center items-center gap-4 mb-6">
-                <span class="text-gray-400 line-through text-xl">$49.00</span>
-                <span class="text-4xl font-black text-red-600">$24.50</span>
+        <section class="p-6">
+            <div class="mb-5 bg-zinc-800 rounded-lg p-3 border border-zinc-700">
+                <div class="flex justify-between text-xs font-bold text-zinc-300 mb-1">
+                    <span class="text-amber-500 flex items-center">
+                        <svg class="w-3 h-3 mr-1 animate-pulse" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path></svg>
+                        High Demand
+                    </span>
+                    <span>86% Claimed</span>
+                </div>
+                <div class="w-full bg-zinc-900 rounded-full h-1.5">
+                    <div class="bg-gradient-to-r from-amber-600 to-amber-400 h-1.5 rounded-full" style="width: 86%"></div>
+                </div>
             </div>
 
-            <ul class="text-sm text-left text-gray-700 space-y-3 mb-8 bg-gray-50 p-4 rounded-lg border border-gray-100">
-                <li class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span><strong>Deep Nitrided Technology</strong> (Won't warp)</span>
+            <div class="relative rounded-xl w-full mb-6 flex items-center justify-center overflow-hidden border border-zinc-700 shadow-[0_0_30px_rgba(0,0,0,0.5)] bg-zinc-800">
+                <div class="absolute top-3 right-3 bg-red-600 text-white font-black text-sm px-3 py-1 rounded-full shadow-lg z-10 transform rotate-3">
+                    SAVE 50%
+                </div>
+                <img src="https://via.placeholder.com/600x600/18181b/f59e0b?text=Stackbear+Carbon+Steel+Pan" alt="Stackbear Deep Nitrided Pan" class="object-cover w-full h-64 opacity-90 hover:opacity-100 transition duration-300">
+            </div>
+
+            <h2 class="text-2xl font-bold mb-1 leading-tight text-white">The Ultimate Carbon Steel Frying Pan</h2>
+            
+            <div class="flex items-end gap-3 mb-6 mt-3">
+                <span class="text-5xl font-black text-amber-500 tracking-tighter">$24.50</span>
+                <div class="flex flex-col pb-1">
+                    <span class="text-zinc-500 line-through text-sm font-bold">$49.00</span>
+                    <span class="text-green-500 text-xs font-bold uppercase">You save $24.50</span>
+                </div>
+            </div>
+
+            <ul class="text-sm text-left text-zinc-300 space-y-4 mb-8 bg-zinc-800/50 p-5 rounded-xl border border-zinc-700/50">
+                <li class="flex items-start">
+                    <div class="bg-amber-500/20 p-1 rounded-full mr-3 mt-0.5">
+                        <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span><strong>Deep Nitrided Formula</strong> <br><span class="text-zinc-500 text-xs">Extreme durability, zero warping.</span></span>
                 </li>
-                <li class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span><strong>Passed 72-Hr Salt Spray Test</strong> (100% Rust-Proof)</span>
-                </li>
-                <li class="flex items-center">
-                    <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>Works flawlessly on ALL stovetops</span>
+                <li class="flex items-start">
+                    <div class="bg-amber-500/20 p-1 rounded-full mr-3 mt-0.5">
+                        <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span><strong>72-Hr Salt Spray Tested</strong> <br><span class="text-zinc-500 text-xs">100% rust-proof performance.</span></span>
                 </li>
             </ul>
 
-            <button id="claimBtn" class="w-full bg-black text-white font-bold py-4 rounded-lg shadow-lg hover:bg-gray-800 transition transform hover:scale-[1.02] flex justify-center items-center">
-                <span>COPY CODE & GET 50% OFF</span>
+            <button id="claimBtn" class="btn-glow w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-zinc-900 font-black text-xl py-5 rounded-2xl shadow-xl hover:from-yellow-400 hover:to-amber-500 transition transform hover:scale-[1.02] flex flex-col justify-center items-center">
+                <span class="tracking-wide">UNLOCK 50% OFF NOW</span>
+                <span class="text-[10px] font-bold opacity-70 mt-1 uppercase tracking-widest">Copies Code: Bear50off</span>
             </button>
-            <p class="text-xs text-gray-400 mt-3">Valid on Amazon.com only</p>
+            
+            <div class="flex justify-center items-center mt-4 space-x-2 opacity-60">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                <span class="text-xs font-semibold">Secure checkout on Amazon</span>
+            </div>
         </section>
 
-        <div id="transitionModal" class="hidden absolute inset-0 bg-black/95 z-50 flex-col items-center justify-center p-6 text-white text-center">
-            <div class="bg-green-500 rounded-full p-3 mb-4">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <div id="transitionModal" class="hidden absolute inset-0 bg-zinc-950/98 z-50 flex-col items-center justify-center p-6 text-white text-center backdrop-blur-md">
+            <div class="bg-gradient-to-tr from-green-500 to-green-400 rounded-full p-4 mb-6 shadow-[0_0_20px_rgba(34,197,94,0.4)]">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
             </div>
-            <h3 class="text-2xl font-bold mb-2">Code Copied: Bear50off</h3>
-            <p class="text-gray-300 mb-8">Follow the final step below to claim.</p>
+            <h3 class="text-3xl font-black mb-2 text-white">VIP Code Copied!</h3>
+            <p class="text-amber-500 font-bold tracking-widest text-lg mb-8">Bear50off</p>
             
-            <div class="bg-gray-800 p-6 rounded-lg w-full border border-gray-600 shadow-2xl mb-8">
-                <p class="text-sm text-gray-400 uppercase tracking-wide mb-2">Instructions</p>
-                <p class="text-lg mb-1">Search Amazon for:</p>
-                <p class="text-2xl font-black text-yellow-400 mb-4 tracking-tight">stackbear carbon steel pan</p>
-                <p class="text-sm text-gray-300">Find our product, and paste the code at checkout to secure your $24.50 price.</p>
+            <div class="bg-zinc-900 p-6 rounded-2xl w-full border border-zinc-800 shadow-2xl mb-8 relative">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-zinc-800 text-zinc-400 text-xs px-3 py-1 rounded-full border border-zinc-700">FINAL STEP</div>
+                <p class="text-zinc-400 mb-2 mt-2">Search Amazon for:</p>
+                <div class="bg-zinc-950 py-3 rounded-lg border border-zinc-800 mb-4">
+                    <p class="text-xl font-black text-white tracking-tight">stackbear carbon steel pan</p>
+                </div>
+                <p class="text-xs text-zinc-500 leading-relaxed">Find our product, paste your VIP code at checkout, and claim your $24.50 pan.</p>
             </div>
 
-            <button id="goToAmazonBtn" class="w-full bg-yellow-400 text-black font-black text-lg py-4 rounded-lg shadow-lg hover:bg-yellow-500 transform transition hover:scale-[1.02]">
+            <button id="goToAmazonBtn" class="w-full bg-white text-black font-black text-lg py-4 rounded-xl shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:bg-zinc-200 transform transition hover:scale-[1.02]">
                 OPEN AMAZON APP
             </button>
-            <button id="closeModalBtn" class="mt-4 text-sm text-gray-400 underline">Cancel</button>
+            <button id="closeModalBtn" class="mt-6 text-sm text-zinc-500 hover:text-white transition">← Cancel & return</button>
         </div>
     </main>
 
-    <footer class="max-w-md mx-auto w-full bg-gray-100 text-center py-6 text-xs text-gray-500 border-t border-gray-200">
-        <p class="mb-2">© 2026 stackbear. All rights reserved.</p>
-        <div class="flex justify-center space-x-4">
-            <a href="#" class="hover:text-gray-800">Privacy Policy</a>
-            <a href="#" class="hover:text-gray-800">Terms of Service</a>
-            <a href="#" class="hover:text-gray-800">Contact Us</a>
+    <footer class="max-w-md mx-auto w-full bg-zinc-200 text-center py-6 text-xs text-zinc-500 border-t border-zinc-300">
+        <p class="mb-2 font-bold text-zinc-600">© 2026 stackbear.</p>
+        <div class="flex justify-center space-x-4 mb-3">
+            <a href="#" class="hover:text-zinc-800 underline">Privacy Policy</a>
+            <a href="#" class="hover:text-zinc-800 underline">Terms of Service</a>
+            <a href="#" class="hover:text-zinc-800 underline">Contact Us</a>
         </div>
-        <p class="mt-4 text-[10px] px-4 text-gray-400">This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way.</p>
+        <p class="mt-4 text-[10px] px-6 text-zinc-400 leading-tight">This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way.</p>
     </footer>
 
     <script>
@@ -87,11 +118,9 @@
             const codeToCopy = "Bear50off";
             const modal = document.getElementById('transitionModal');
             
-            // 弹出遮罩层
             modal.classList.remove('hidden');
             modal.classList.add('flex');
 
-            // 复制折扣码到剪贴板
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(codeToCopy).catch(err => console.log('Clipboard API failed', err));
             } else {
@@ -106,14 +135,12 @@
             }
         });
 
-        // 绑定跳转事件 (用户主动点击才跳转)
         document.getElementById('goToAmazonBtn').addEventListener('click', function() {
             const searchKeyword = "stackbear+carbon+steel+pan";
             const amazonUrl = `https://www.amazon.com/s?k=${searchKeyword}`;
             window.location.href = amazonUrl;
         });
 
-        // 允许用户关闭遮罩层 (增加用户体验和合规性)
         document.getElementById('closeModalBtn').addEventListener('click', function() {
             const modal = document.getElementById('transitionModal');
             modal.classList.remove('flex');
