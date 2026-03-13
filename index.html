@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackbear | Exclusive 50% OFF Offer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 隐藏遮罩层的默认状态 */
+        .hidden-modal { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <main class="max-w-md mx-auto bg-white min-h-screen shadow-xl relative overflow-hidden">
+        
+        <header class="bg-black text-white text-center py-4">
+            <h1 class="text-2xl font-bold tracking-widest uppercase">stackbear</h1>
+        </header>
+
+        <section class="p-6 text-center">
+            <div class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 animate-pulse">
+                LIMITED TIME OFFER
+            </div>
+            <h2 class="text-3xl font-extrabold mb-2 text-gray-900">Get 50% OFF</h2>
+            <p class="text-lg text-gray-500 mb-6">The Ultimate Carbon Steel Frying Pan</p>
+
+            <div class="bg-gray-200 rounded-lg h-64 w-full mb-6 flex items-center justify-center overflow-hidden border border-gray-100 shadow-inner">
+                <img src="https://via.placeholder.com/400x300?text=Stackbear+Pan+Image" alt="Stackbear Carbon Steel Pan" class="object-cover w-full h-full">
+            </div>
+
+            <div class="flex justify-center items-center gap-4 mb-6">
+                <span class="text-gray-400 line-through text-xl">$49.00</span>
+                <span class="text-4xl font-black text-red-600">$24.50</span>
+            </div>
+
+            <ul class="text-sm text-left text-gray-700 space-y-3 mb-8 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <strong>Deep Nitrided Technology</strong> (Won't warp)
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <strong>Passed 72-Hr Salt Spray Test</strong> (100% Rust-Proof)
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Works on ALL stovetops
+                </li>
+            </ul>
+
+            <button id="claimBtn" class="w-full bg-black text-white font-bold py-4 rounded-lg shadow-lg hover:bg-gray-800 transition transform hover:scale-105 flex justify-center items-center">
+                <span>COPY CODE & GET 50% OFF</span>
+            </button>
+            <p class="text-xs text-gray-400 mt-3">Valid on Amazon.com only</p>
+        </section>
+
+        <div id="transitionModal" class="hidden-modal absolute inset-0 bg-black/90 z-50 flex flex-col items-center justify-center p-6 text-white text-center">
+            <div class="bg-green-500 rounded-full p-3 mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Code Copied: Bear50off</h3>
+            <p class="text-gray-300 mb-8">We are redirecting you to Amazon...</p>
+            
+            <div class="bg-gray-800 p-6 rounded-lg w-full border border-gray-600 shadow-2xl">
+                <p class="text-sm text-gray-400 uppercase tracking-wide mb-2">Next Step</p>
+                <p class="text-lg mb-1">Search for:</p>
+                <p class="text-2xl font-black text-yellow-400 mb-4 tracking-tight">stackbear carbon steel pan</p>
+                <p class="text-sm text-gray-300">Paste the code at checkout to claim your $24.50 price.</p>
+            </div>
+
+            <div class="mt-8 flex items-center justify-center space-x-2">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('claimBtn').addEventListener('click', function() {
+            // 1. 复制折扣码到剪贴板
+            const codeToCopy = "Bear50off";
+            navigator.clipboard.writeText(codeToCopy).then(() => {
+                
+                // 2. 显示过渡遮罩层
+                const modal = document.getElementById('transitionModal');
+                modal.classList.remove('hidden-modal');
+
+                // 3. 延迟 3.5 秒后跳转 (让用户有时间看清楚要搜索什么)
+                setTimeout(() => {
+                    // 跳转链接：尝试唤醒亚马逊 App 的搜索功能
+                    // 如果手机装了 Amazon App，这个链接极大概率会直接跳进 App 搜索页
+                    const searchKeyword = "stackbear+carbon+steel+pan";
+                    const amazonUrl = `https://www.amazon.com/s?k=${searchKeyword}`;
+                    
+                    window.location.href = amazonUrl;
+                }, 3500);
+
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Please manually copy code: Bear50off');
+            });
+        });
+    </script>
+</body>
+</html>
